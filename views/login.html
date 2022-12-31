@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../public/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    color: rgb(164, 66, 173);
+  }
+</style>
+<body style="height: 770px;">
+
+  <div class="tracker"></div>
+  <section class="showcase overflow-hidden">
+    <a href="./index.html" class="logo">
+      <img src="../public/photo/4.svg" alt="" class="logo-image" />
+    </a>
+
+    <nav class="navbar vertical-center line line-vertical">
+      <ul>
+        <li>
+          <a href="../index.html" class="link">Home</a>
+        </li>
+        <li>
+          <a href="./login.html" class="link">Register</a>
+        </li>
+        <li>
+          <a href="./news.html" class="link">News</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h1 class="title line line-horizontal overflow-hidden">
+      <span class="to-right has-in-common" style="--delay: 0s">Login Page</span>
+    </h1>
+
+    <h2 class="subtitle overflow-hidden">
+      <span class="to-right has-in-common" style="--delay: 0.15s">&copy;2022</span>
+    </h2>
+    
+    <div class="vertical-text line line-vertical">
+      <div class="vertical-text-inner overflow-hidden">
+        <span class="to-bottom has-in-common" style="--delay: 0.25s">Arwa Time</span>
+      </div>
+    </div>
+
+    <div class="description line line-horizontal">
+      <p class="overflow-hidden">
+        <span class="to-bottom has-in-common" style="--delay: 0.035s">Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Aspernatur animi praesentium odio corporis
+          iusto quae, iste minima! Deserunt dolore quae esse assumenda minima eum? Quae odio dolore magni
+          accusamus sit.</span>
+      </p>
+      </p>
+
+    </div>
+
+      <a href="register.html" class="cta link scale-rotate has-in-common text-purple-900" style="--delay: 0.75s">Register</a>
+
+    <img
+      src="../public/photo/15.png"
+      alt="" class="shape has-in-common sm-hidden" data-offset=".05" style="--delay: .5s">
+
+    <img
+      src="../public/photo/15.png"
+      alt="" class="shape shape-md has-in-common sm-hidden" data-offset=".025" style="--delay: .25s">
+  </section>
+
+
+</body>
+<script>
+  const moveElements = (e) => {
+    const shapes = document.querySelectorAll(".shape");
+    const tracker = document.querySelector(".tracker");
+
+    tracker.style.top = `${e.clientY}px`;
+    tracker.style.left = `${e.clientX}px`;
+    tracker.style.opacity = 1;
+
+    shapes.forEach((shape) => {
+      const shapeOffset = shape.getAttribute("data-offset");
+
+      let offsetX = (window.innerWidth - e.clientX) * shapeOffset;
+      let offsetY = (window.innerHeight - e.clientY) * shapeOffset;
+
+      shape.style.translate = `${offsetX}px ${offsetY}px`;
+    });
+  };
+
+  document.addEventListener("mousemove", moveElements);
+
+</script>
+
+</html>

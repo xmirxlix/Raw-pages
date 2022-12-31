@@ -1,1 +1,2 @@
-# Raw-pages
+# Raw-pages (no backend)
+"weblog"
